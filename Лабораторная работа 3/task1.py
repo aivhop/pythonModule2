@@ -35,9 +35,6 @@ class PaperBook(Book):
         self.check_pages(pages)
         self._pages = pages
 
-    def __str__(self) -> str:
-        return f'Бумажная {super().__str__()}. Количество страниц {self._pages}'
-
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(name={self._name!r}, author={self._author!r}, pages={self._pages})"
 
@@ -63,9 +60,6 @@ class AudioBook(Book):
         super().__init__(name, author)
         self.check_duration(duration)
         self._duration = duration
-
-    def __str__(self) -> str:
-        return f'Аудио {super().__str__()}. Продолжительность {self._duration}'
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}(name={self._name!r}, author={self._author!r}, duration={self._duration})"
